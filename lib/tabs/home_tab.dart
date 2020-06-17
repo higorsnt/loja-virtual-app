@@ -31,7 +31,7 @@ class HomeTab extends StatelessWidget {
               backgroundColor: Colors.transparent,
               elevation: 0.0,
               flexibleSpace: FlexibleSpaceBar(
-                title: Text('Novidades'),
+                title: const Text('Novidades'),
                 centerTitle: true,
               ),
             ),
@@ -41,7 +41,7 @@ class HomeTab extends StatelessWidget {
                   .orderBy("pos")
                   .getDocuments(),
               builder: (context, snapshot) {
-                if (snapshot.hasData) {
+                if (!snapshot.hasData) {
                   return SliverToBoxAdapter(
                     child: Container(
                       height: 200,
@@ -62,10 +62,10 @@ class HomeTab extends StatelessWidget {
                         .toList(),
                     children: snapshot.data.documents
                         .map((doc) => FadeInImage.memoryNetwork(
-                          placeholder: kTransparentImage,
-                          image: doc.data["image"],
-                          fit: BoxFit.cover,
-                        ))
+                              placeholder: kTransparentImage,
+                              image: doc.data["image"],
+                              fit: BoxFit.cover,
+                            ))
                         .toList(),
                   );
                 }

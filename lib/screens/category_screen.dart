@@ -31,7 +31,7 @@ class CategoryScreen extends StatelessWidget {
               .collection('items')
               .getDocuments(),
           builder: (context, snapshot) {
-            if (snapshot.hasData) {
+            if (!snapshot.hasData) {
               return Center(
                 child: CircularProgressIndicator(),
               );
@@ -49,20 +49,20 @@ class CategoryScreen extends StatelessWidget {
                     ),
                     itemCount: snapshot.data.documents.length,
                     itemBuilder: (context, index) {
-                      return ProductTile(
-                          'grid',
-                          ProductData.fromDocument(
-                              snapshot.data.documents[index]));
+                      ProductData data = ProductData.fromDocument(
+                          snapshot.data.documents[index]);
+                      data.category = this.snapshot.documentID;
+                      return ProductTile('grid', data);
                     },
                   ),
                   ListView.builder(
                     padding: EdgeInsets.all(4),
                     itemCount: snapshot.data.documents.length,
                     itemBuilder: (context, index) {
-                      return ProductTile(
-                          'list',
-                          ProductData.fromDocument(
-                              snapshot.data.documents[index]));
+                      ProductData data = ProductData.fromDocument(
+                          snapshot.data.documents[index]);
+                      data.category = this.snapshot.documentID;
+                      return ProductTile('list', data);
                     },
                   ),
                 ],

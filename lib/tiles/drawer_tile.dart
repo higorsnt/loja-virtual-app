@@ -23,6 +23,7 @@ class DrawerTile extends StatelessWidget {
             children: <Widget>[
               Icon(
                 icon,
+                size: 32,
                 color: controller.page.round() == page
                     ? Theme.of(context).primaryColor
                     : Colors.grey[700],
