@@ -52,6 +52,7 @@ class CategoryScreen extends StatelessWidget {
                       ProductData data = ProductData.fromDocument(
                           snapshot.data.documents[index]);
                       data.category = this.snapshot.documentID;
+
                       return ProductTile('grid', data);
                     },
                   ),
@@ -62,6 +63,7 @@ class CategoryScreen extends StatelessWidget {
                       ProductData data = ProductData.fromDocument(
                           snapshot.data.documents[index]);
                       data.category = this.snapshot.documentID;
+
                       return ProductTile('list', data);
                     },
                   ),
