@@ -116,7 +116,7 @@ class OrderTile extends StatelessWidget {
           ),
           CircularProgressIndicator(
             valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-          )
+          ),
         ],
       );
     } else {
