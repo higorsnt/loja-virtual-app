@@ -12,8 +12,8 @@ class HomeTab extends StatelessWidget {
           decoration: BoxDecoration(
               gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 211, 118, 130),
-              Color.fromARGB(255, 253, 181, 168)
+              Color.fromARGB(255, 226, 149, 120),
+              Color.fromARGB(255, 255, 221, 210),
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -54,8 +54,6 @@ class HomeTab extends StatelessWidget {
                 } else {
                   return SliverStaggeredGrid.count(
                     crossAxisCount: 2,
-                    mainAxisSpacing: 1,
-                    crossAxisSpacing: 1,
                     staggeredTiles: snapshot.data.documents
                         .map((doc) =>
                             StaggeredTile.count(doc.data['x'], doc.data['y']))

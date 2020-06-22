@@ -11,11 +11,15 @@ class CustomDrawer extends StatelessWidget {
 
   Widget _buildDrawerBack() => Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-          colors: [Color.fromARGB(255, 203, 236, 241), Colors.white],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        )),
+          gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(255, 131, 197, 190),
+              Colors.white,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
       );
 
   @override
@@ -37,7 +41,7 @@ class CustomDrawer extends StatelessWidget {
                       top: 8,
                       left: 0,
                       child: Text(
-                        'Flutter\'s\nClothing',
+                        'Loja Virtual',
                         style: TextStyle(
                           fontSize: 34,
                           fontWeight: FontWeight.bold,
@@ -53,31 +57,39 @@ class CustomDrawer extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  model.isLoggedIn() ? 'Olá!' : 'Olá, ${model.userData['name']}',
+                                  model.isLoggedIn()
+                                      ? 'Olá, ${model.userData['name']}'
+                                      : 'Olá!',
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                GestureDetector(
-                                  child: Text(
-                                    !model.isLoggedIn() ? 'Entre ou cadastre-se >' : 'Sair',
-                                    style: TextStyle(
-                                      color: Theme.of(context).primaryColor,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
+                                Padding(
+                                  padding: EdgeInsets.only(top: 5),
+                                  child: GestureDetector(
+                                    child: Text(
+                                      !model.isLoggedIn()
+                                          ? 'Entre ou cadastre-se'
+                                          : 'Sair',
+                                      style: TextStyle(
+                                        color: Theme.of(context).primaryColor,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
+                                    onTap: () {
+                                      if (!model.isLoggedIn()) {
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                            builder: (context) => LoginScreen(),
+                                          ),
+                                        );
+                                      } else {
+                                        model.signOut();
+                                      }
+                                    },
                                   ),
-                                  onTap: () {
-                                    if (!model.isLoggedIn()) {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                LoginScreen()));
-                                    } else {
-                                      model.signOut();
-                                    }
-                                  },
                                 ),
                               ],
                             );

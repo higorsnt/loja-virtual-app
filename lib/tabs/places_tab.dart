@@ -8,7 +8,7 @@ class PlacesTab extends StatelessWidget {
     return FutureBuilder<QuerySnapshot>(
       future: Firestore.instance.collection('places').getDocuments(),
       builder: (context, snapshot) {
-        if (snapshot.hasData) {
+        if (!snapshot.hasData) {
           return Center(
             child: CircularProgressIndicator(),
           );

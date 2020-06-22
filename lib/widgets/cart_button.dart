@@ -11,7 +11,7 @@ class CartButton extends StatelessWidget {
           MaterialPageRoute(builder: (context) => CartScreen())
         );
       },
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Color.fromRGBO(131, 197, 190, 1),
     );
   }
 }

@@ -59,6 +59,7 @@ class UserModel extends Model {
         .signInWithEmailAndPassword(email: email, password: password)
         .then((response) async {
       firebaseUser = response.user;
+      await _loadCurrentUser();
       onSuccess();
 
       isLoading = false;
