@@ -31,12 +31,17 @@ class OrderScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              height: 10,
             ),
             Text(
-              'Código do Oedido: $orderId',
+              'Código do Pedido: $orderId',
               style: TextStyle(
                 fontSize: 16,
               ),
+              textAlign: TextAlign.center,
             ),
           ],
         ),

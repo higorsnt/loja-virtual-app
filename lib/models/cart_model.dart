@@ -108,7 +108,7 @@ class CartModel extends Model {
     double shipPrice = getShipPrice();
     double discount = getDiscount();
 
-    DocumentReference ref = await Firestore.instance.collection('order').add({
+    DocumentReference ref = await Firestore.instance.collection('orders').add({
       'clientId': user.firebaseUser.uid,
       'products': products.map((cartProduct) => cartProduct.toMap()).toList(),
       'shipPrice': shipPrice,
