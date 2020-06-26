@@ -11,6 +11,12 @@ Este aplicativo é útil para uma loja conseguir impulsionar suas vendas e ampli
 
 Essa aplicação foi desenvolvida durante a execução do curso [Criação de Apps Android e iOS com Flutter - Crie 16 Apps](https://www.udemy.com/course/curso-completo-flutter-app-android-ios/).
 
+## :white_check_mark: Resultado
+
+<p align="center">
+  <img alt="gif" src=".github/example.gif" width="80px" />
+</p>
+
 ## :books: Documentação
 **TODO**
 
