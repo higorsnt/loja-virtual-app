@@ -2,7 +2,7 @@
   <p>🛍️ Loja Virtual</p>
 </h1>
 <p align="center">
-  <img alt="gif" src=".github/animation.gif" width="80px" />
+  <img alt="gif" src=".github/animation.gif" width="100px" />
 </p>
 
 ## :bookmark: Sobre
@@ -14,7 +14,7 @@ Essa aplicação foi desenvolvida durante a execução do curso [Criação de Ap
 ## :white_check_mark: Resultado
 
 <p align="center">
-  <img alt="gif" src=".github/example.gif" width="80px" />
+  <img alt="gif" src=".github/example.gif" width="200px" />
 </p>
 
 ## :books: Documentação
