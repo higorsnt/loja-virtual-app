@@ -33,7 +33,7 @@ Essa aplicação foi desenvolvida durante a execução do curso [Criação de Ap
     $ git clone https://github.com/HigorSnt/loja-virtual-app.git
   ```
 2. Em um terminal, entre na pasta gerada pelo clone.
-3. Para a execução é necessário ter conectado o celular via cabo USB ou estar com o emulador já funcionando, em seguida execute o comando:
+3. Para a execução é necessário ter conectado o celular via cabo USB ou estar com o emulador já funcionando. Em seguida execute o comando:
   ```sh
     $ flutter run
   ```
