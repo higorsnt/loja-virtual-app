@@ -18,15 +18,16 @@ class UserModel extends Model {
     _loadCurrentUser();
   }
 
-  static UserModel of(BuildContext context){
+  static UserModel of(BuildContext context) {
     return ScopedModel.of<UserModel>(context);
   }
 
-  void signUp(
-      {@required Map<String, dynamic> userData,
-      @required String password,
-      @required VoidCallback onSuccess,
-      @required VoidCallback onFail}) {
+  void signUp({
+    @required Map<String, dynamic> userData,
+    @required String password,
+    @required VoidCallback onSuccess,
+    @required VoidCallback onFail,
+  }) {
     isLoading = true;
     notifyListeners();
 
@@ -47,11 +48,12 @@ class UserModel extends Model {
     });
   }
 
-  void signIn(
-      {@required String email,
-      @required String password,
-      @required VoidCallback onSuccess,
-      @required VoidCallback onFail}) async {
+  void signIn({
+    @required String email,
+    @required String password,
+    @required VoidCallback onSuccess,
+    @required VoidCallback onFail,
+  }) async {
     isLoading = true;
     notifyListeners();
 

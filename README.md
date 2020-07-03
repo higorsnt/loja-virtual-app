@@ -18,7 +18,7 @@ Essa aplicação foi desenvolvida durante a execução do curso [Criação de Ap
 </p>
 
 ## :books: Documentação
-**TODO**
+  1. [Dependências](./DOCUMENTATION.md#Dependências) 
 
 ## :pencil: Pré-Requisitos
 

@@ -127,8 +127,11 @@ class CartModel extends Model {
       'orderId': ref.documentID,
     });
 
-    QuerySnapshot query = await Firestore.instance.collection('users')
-        .document(user.firebaseUser.uid).collection('cart').getDocuments();
+    QuerySnapshot query = await Firestore.instance
+        .collection('users')
+        .document(user.firebaseUser.uid)
+        .collection('cart')
+        .getDocuments();
     query.documents.forEach((doc) {
       doc.reference.delete();
     });
