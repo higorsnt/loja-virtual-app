@@ -20,18 +20,18 @@ Essa aplicação foi desenvolvida durante a execução do curso [Criação de Ap
 ## :books: Documentação
   1. [Dependências](./DOCUMENTATION.md#package-dependências) 
   2. [Funcionalidades Principais](./DOCUMENTATION.md#newspaper-funcionalidades)
-  3. [Models Utilizados](./DOCUMENTATION.md#squirrel-models)
-     1. [User Model](./DOCUMENTATION.md#squirrel-user-model)
+  3. [Models Utilizados](./DOCUMENTATION.md#shipit-models)
+     1. [User Model](./DOCUMENTATION.md#octocat-user-model)
         1. [Métodos](./DOCUMENTATION.md#flags-métodos)
-     2. [Cart Model](./DOCUMENTATION.md#squirrel-cart-model)
+     2. [Cart Model](./DOCUMENTATION.md#octocat-cart-model)
         1. [Métodos](./DOCUMENTATION.md#flags-métodos-1)
   4. [Modelo das Entidades no Banco de Dados](./DOCUMENTATION.md#construction-modelo-das-entidades-no-banco-de-dados)
-     1. [Usuário](./DOCUMENTATION.md#usuario)
-     2. [Produtos](./DOCUMENTATION.md#produtos)
-     3. [Endereço das Lojas](./DOCUMENTATION.md#endereco-das-lojas)
-     4. [Pedidos](./DOCUMENTATION.md#pedidos)
-     5. [Novidades](./DOCUMENTATION.md#novidades)
-     6. [Cupons](./DOCUMENTATION.md#cupons)
+     1. [Usuário](./DOCUMENTATION.md#usuário-users)
+     2. [Produtos](./DOCUMENTATION.md#produtos-products)
+     3. [Endereço das Lojas](./DOCUMENTATION.md#endereço-das-lojas-places)
+     4. [Pedidos](./DOCUMENTATION.md#pedidos-orders)
+     5. [Novidades](./DOCUMENTATION.md#novidades-home)
+     6. [Cupons](./DOCUMENTATION.md#cupons-coupons)
 
 ## :pencil: Pré-Requisitos
 
@@ -60,9 +60,3 @@ Essa aplicação foi desenvolvida durante a execução do curso [Criação de Ap
 ## :memo: Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
-
-<style>
-.alert-warning {
-  color: rgb(138,109,59) !important;
-}
-</style>
