@@ -24,9 +24,9 @@
   * Adicinar produtos em um carrinho
   * Finalizar compra dos produtos adicionado no carrinho
 
-## :squirrel: Models
+## :shipit: Models
 
-### :squirrel: User Model
+### :octocat: User Model
 Esta entidade possui como atributos a instância do _FirebaseAuth_, um _FirabaseUser_ para indicar o
 usuário logado, e um mapa com as informações do mesmo, enquanto que a variável _isLoading_ é usada para indicar que está ocorrendo algum tipo de operação assíncrona e se faz necessário indicar ao usuário isso.
 
@@ -42,25 +42,26 @@ singleton, e para utilizar esta entidade basta chamar o método `.of(context)`, 
 * `_saveUserData`: Método privado que realiza a criação de um usuário no banco de dados do Firebase.
 * `_loadCurrentUser`: Método privado que incialmente pega o usuário presente na instância única do _FirebaseAuth_, e caso tenha algum usuário será buscado os dados salvos no banco de dados.
 
-### :squirrel: Cart Model
+### :octocat: Cart Model
 Essa classe também é um singleton, podendo ser buscado pelo método `.of(context)`, e como atributos possui o usuário dono do carrinho de compras, a lista de produtos adicionados, o cupom promocional e a porcentagem de desconto que esse cupom oferece.
 
 #### :flags: Métodos
-* `addCartItem`
-* `removeCartItem`
-* `incProduct`
-* `decProduct`
-* `setCupom`
-* `getDiscount`
-* `getShipPrice`
-* `updatePrices`
-* `finishOrder`
-* `_loadCartItems`
+* `addCartItem`: Este método adiciona um produto ao carrinho do usuário logado.
+* `removeCartItem`: Este método remove um produto do carrinho do usuário logado.
+* `incProduct`: Após adicionar o produto no carrinho o usuário pode aumentar a quantidade de unidades do produto. Portanto, esta função é que realiza esta ação.
+* `decProduct`: Realiza a ação contrária da função anterior, ou seja, o decréscimo de unidades de um produto do carrinho.
+* `setCupom`: Adiciona um cupom promocional válido que dá desconto aos produtos presentes no carrinho.
+* `getDiscount`: Retorna o desconto aplicado à compra.
+* `getShipPrice`: Retorna o valor do frete, que está de forma estática.
+* `updatePrices`: Ao ser chamado este método atualizará os widgets que estão observando os dados modificados.
+* `finishOrder`: Realiza todos os procedimentos necessários para finalizar a compra: cria uma nova compra na tabela `orders`, guarda uma referência dessa compra no registro do usuário e limpa o carrinho do mesmo e por fim notifica os widgets que ocorreram mudanças.
+* `_loadCartItems`: Este método realiza a busca de produtos do carrinho no Firebase.
 
 
 ## :construction: Modelo das Entidades no Banco de Dados
 
-1. Usuário (`users`)
+### Usuário (`users`)
+
 ```json
   {
     "name": "<user name>",
@@ -73,7 +74,9 @@ Essa classe também é um singleton, podendo ser buscado pelo método `.of(conte
     }
   }
 ```
-2. Produtos (`products`)
+
+### Produtos (`products`)
+
 ```json
   {
     "<category name>": {
@@ -85,7 +88,7 @@ Essa classe também é um singleton, podendo ser buscado pelo método `.of(conte
           "images": [
             "<images url>"
           ],
-          "price": XX.XX,
+          "price": 0.0,
           "sizes": [
             "size, e.g. M"
           ],
@@ -95,54 +98,58 @@ Essa classe também é um singleton, podendo ser buscado pelo método `.of(conte
     }
   }
 ```
-3. Endereço das Lojas (`places`)
+
+### Endereço das Lojas (`places`)
+
 ```json
   {
     "<place id>": {
       "address": "<store addres>",
       "image": "<store image url>",
-      "lat": XX.XX,
-      "long": XX.XX,
+      "lat": 0.0,
+      "long": 0.0,
       "phone": "<store phone>",
       "title": "<store name>"
     }
   }
 ```
 
-4. Pedidos (`orders`)
+### Pedidos (`orders`)
 
-```json
+```js
   {
     "<order id>": {
       "clientId": "<client id>",
-      "discount": XX.XX,
-      "productsPrice": XX.XX,
-      "shipPrice": XX.XX,
-      "status": X,
-      "totalPrice": XX.XX
+      "discount": 0.0,
+      "productsPrice": 0.0,
+      "shipPrice": 0.0,
+      // valores possíveis de status:
+      // 1 (Preparação), 2 (Transporte), 3(Entrega), 4 (Concluído)
+      "status": 0,
+      "totalPrice": 0.0
     }
   }
 ```
 
-5. Novidades (`home`)
+### Novidades (`home`)
 
 ```json
   {
     "<id>": {
       "image": "<image url>",
-      "pos": X,
-      "x": X,
-      "y": X
+      "pos": 0,
+      "x": 0,
+      "y": 0
     }
   }
 ```
 
-6. Cupoms (`coupons`)
+### Cupons (`coupons`)
 
 ```json
   {
     "<coupom name>": {
-      "percent": XX
+      "percent": 0
     }
   }
 ```

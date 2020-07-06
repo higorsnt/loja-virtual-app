@@ -18,13 +18,32 @@ Essa aplicação foi desenvolvida durante a execução do curso [Criação de Ap
 </p>
 
 ## :books: Documentação
-  1. [Dependências](./DOCUMENTATION.md#Dependências) 
+  1. [Dependências](./DOCUMENTATION.md#package-dependências) 
+  2. [Funcionalidades Principais](./DOCUMENTATION.md#newspaper-funcionalidades)
+  3. [Models Utilizados](./DOCUMENTATION.md#squirrel-models)
+     1. [User Model](./DOCUMENTATION.md#squirrel-user-model)
+        1. [Métodos](./DOCUMENTATION.md#flags-métodos)
+     2. [Cart Model](./DOCUMENTATION.md#squirrel-cart-model)
+        1. [Métodos](./DOCUMENTATION.md#flags-métodos-1)
+  4. [Modelo das Entidades no Banco de Dados](./DOCUMENTATION.md#construction-modelo-das-entidades-no-banco-de-dados)
+     1. [Usuário](./DOCUMENTATION.md#usuario)
+     2. [Produtos](./DOCUMENTATION.md#produtos)
+     3. [Endereço das Lojas](./DOCUMENTATION.md#endereco-das-lojas)
+     4. [Pedidos](./DOCUMENTATION.md#pedidos)
+     5. [Novidades](./DOCUMENTATION.md#novidades)
+     6. [Cupons](./DOCUMENTATION.md#cupons)
 
 ## :pencil: Pré-Requisitos
 
 - É necessário ter configurado o Flutter em sua máquina, algo que pode ser feito por meio [deste passo a passo](https://flutter.dev/docs/get-started/install).
 - É necessário possuir um Emulador de Android ou IOS, algo que pode ser adquirido instalando o [Android Studio](https://developer.android.com/studio/run/emulator) ou o [Genymotion](https://www.genymotion.com/).
   - Uma alternativa à opção acima é rodar no seu próprio aparelho celular, para isso basta seguir os passos indicados nesse [artigo](https://medium.com/@marcoshenriqueh393/como-configurar-dispositivos-f%C3%ADsicos-no-flutter-b3acbe02e895).
+- Além disso, é necessário ter uma conta no [Firebase](https://firebase.google.com/?hl=pt-br), após criar a conta ou realizar login é necessário criar um novo projeto e em seguida adicionar um dispostivo Android e baixar o arquivo `google-services.json`, onde vem a configuração necessária para realizar a conexão com o Firebase, e adicionar este arquivo no seguinte caminho `<raiz_projeto>/android/app/`. Ao final, a hierarquia de arquivos estará assim:
+<p align="center">
+  <img alt="firebase-config" src=".github/firebase-config.png" width="200px" />
+</p>
+  
+> :warning: **Esta configuração é apenas para Android.**
 
 ## :boom: Utilização
 
@@ -41,3 +60,9 @@ Essa aplicação foi desenvolvida durante a execução do curso [Criação de Ap
 ## :memo: Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+
+<style>
+.alert-warning {
+  color: rgb(138,109,59) !important;
+}
+</style>
