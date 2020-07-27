@@ -36,6 +36,7 @@ class ProductTile extends StatelessWidget {
                         children: <Widget>[
                           Text(
                             product.title,
+                            overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                             ),
